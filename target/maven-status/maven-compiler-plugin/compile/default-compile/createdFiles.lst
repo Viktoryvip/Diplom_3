@@ -1,0 +1,11 @@
+user\UserClient.class
+user\UserGenerator.class
+user\UserModel.class
+pageObject\MainPage.class
+pageObject\RecoveryPassPage.class
+user\BaseSite.class
+pageObject\RegisterPage.class
+user\UserCredentials.class
+pageObject\ProfilePage.class
+user\User.class
+pageObject\LoginPage.class
