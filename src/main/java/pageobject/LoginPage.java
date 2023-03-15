@@ -1,4 +1,4 @@
-package pageObject;
+package pageobject;
 import user.*;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
@@ -100,7 +100,6 @@ public class LoginPage {
     public boolean isErrorMessageAppear() {
         return errorPasswordMessage.exists();
     }
-
 
     @Step("Проверить отображение текста с ошибкой ")
     public LoginPage errorPasswordMessageGetText() {

@@ -5,7 +5,6 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import io.restassured.response.Response;
 import org.junit.*;
 
-
 abstract public class BaseTest {
 
     protected static final User user = UserGenerator.getRandomUser();
@@ -31,7 +30,6 @@ abstract public class BaseTest {
     public void tearDown() {
         Selenide.clearBrowserCookies();
         Selenide.clearBrowserLocalStorage();
-
         UserCredentials userCredentials = new UserCredentials(user.getEmail(), user.getPassword());
         Response response = userClient.login(userCredentials);
         if (response.body().jsonPath().getString("accessToken") != null) {

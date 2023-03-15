@@ -1,4 +1,4 @@
-package pageObject;
+package pageobject;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
@@ -20,7 +20,6 @@ public class ProfilePage {
 
     @FindBy(how = How.XPATH, using = "//button[text()='Выход']")
     private SelenideElement logoutButton;
-
 
     @Step("Кликнуть на кнопку Выход")
     public LoginPage clickExitButton() {

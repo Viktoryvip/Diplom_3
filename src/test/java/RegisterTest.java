@@ -1,5 +1,5 @@
 import user.*;
-import pageObject.*;
+import pageobject.*;
 import com.codeborne.selenide.WebDriverRunner;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.Response;
@@ -8,10 +8,8 @@ import org.junit.Test;
 import static com.codeborne.selenide.Selenide.open;
 import static org.junit.Assert.*;
 
-
 public class RegisterTest {
     UserClient userClient;
-
     protected String name = UserGenerator.getRandomUser().getName();
     protected String email = UserGenerator.getRandomUser().getEmail();
     protected String password = UserGenerator.getRandomUser().getPassword();
@@ -28,10 +26,7 @@ public class RegisterTest {
                 .setPassword(password)
                 .clickConfirmRegistrationButton()
                 .loginRegisterUser(email, password);
-
-
         String currentUrl = WebDriverRunner.getWebDriver().getCurrentUrl();
-
         assertEquals( "https://stellarburgers.nomoreparties.site/login", currentUrl);
     }
 
@@ -60,12 +55,10 @@ public class RegisterTest {
         if (response.body().jsonPath().getString("accessToken") != null) {
             userClient.delete(response);
         }
-
         UserCredentials userNoValidCredentials = new UserCredentials(email, incorrectPassword);
         Response noValidResponse = userClient.login(userNoValidCredentials);
         if (noValidResponse.body().jsonPath().getString("accessToken") != null) {
             userClient.delete(noValidResponse);
         }
     }
-
 }

@@ -1,6 +1,6 @@
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.Test;
-import pageObject.*;
+import pageobject.*;
 import static com.codeborne.selenide.Selenide.open;
 
 public class RedirectToConstructorSectionsTest extends BaseTest {
@@ -25,7 +25,6 @@ public class RedirectToConstructorSectionsTest extends BaseTest {
     @Test
     @DisplayName("переход к разделу «Начинки»")
     public void moveFillingsSectionButtonTest() {
-
         open(MainPage.URL_MAIN, MainPage.class)
                 .clickFillingsButton()
                 .isSaucesHeaderDisplayed();
@@ -39,7 +38,6 @@ public class RedirectToConstructorSectionsTest extends BaseTest {
                 .isBunsHeaderIsDisplayed();
     }
 
-
     @Test
     @DisplayName("Скролл раздела «Соусы» в конструторе")
     public void moveSaucesSectionScrollTest() {
@@ -48,7 +46,6 @@ public class RedirectToConstructorSectionsTest extends BaseTest {
                 .isSaucesHeaderDisplayed();
     }
 
-
     @Test
     @DisplayName("Скролл раздела «Начинки» в конструторе")
     public void moveFillingsSectionScrollest() {
@@ -56,5 +53,4 @@ public class RedirectToConstructorSectionsTest extends BaseTest {
                 .scrollToFillingsHeader()
                 .isFillingsHeaderDisplayed();
     }
-
 }

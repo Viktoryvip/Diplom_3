@@ -1,4 +1,4 @@
-package pageObject;
+package pageobject;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
@@ -55,7 +55,6 @@ public class MainPage {
 
     @FindBy(how = How.XPATH, using = "//p[text()='Некорректный пароль']")
     private SelenideElement errorPasswordMessage;
-
 
     @Step("Кликнуть Войти в аккаунт")
     public LoginPage clickLoginButton() {

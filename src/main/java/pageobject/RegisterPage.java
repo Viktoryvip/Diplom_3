@@ -1,4 +1,4 @@
-package pageObject;
+package pageobject;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import org.openqa.selenium.support.FindBy;
@@ -7,7 +7,6 @@ import static com.codeborne.selenide.Selenide.page;
 
 public class RegisterPage {
     public final static String URL_REGISTER = "https://stellarburgers.nomoreparties.site/register";
-
 
     @FindBy(how = How.XPATH, using = "//label[text()='Имя']/following-sibling::input")
     private SelenideElement nameField;
@@ -26,8 +25,6 @@ public class RegisterPage {
 
     @FindBy(how = How.XPATH, using = "//p[text()='Некорректный пароль']")
     private SelenideElement errorPasswordMessage;
-
-
 
     @Step("Вввод имени")
     public RegisterPage setName(String name) {
@@ -64,6 +61,4 @@ public class RegisterPage {
         registrationPageAuthButton.click();
         return page(LoginPage.class);
     }
-
-
 }

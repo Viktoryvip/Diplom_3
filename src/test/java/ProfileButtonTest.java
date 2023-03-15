@@ -1,6 +1,6 @@
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.Test;
-import pageObject.*;
+import pageobject.*;
 import static com.codeborne.selenide.Selenide.open;
 
 public class ProfileButtonTest extends BaseTest {
@@ -12,6 +12,5 @@ public class ProfileButtonTest extends BaseTest {
                 .loginUser(user)
                 .clickProfileButtonAfterAuth()
                 .isProfileHeaderExist();
-
     }
 }
